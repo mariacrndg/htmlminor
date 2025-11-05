@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>LanCha</title>
+</head>
+<style>
+    body {  
+        background-color:#D9D8D2 ; 
+        color: #0D2602; 
+         margin: 0;
+         font-family: Arial;
+    }
+    header {
+         background: linear-gradient(135deg, #788C4D, #8FA65D); 
+        color: #D9D8D2;
+        padding: 20px;
+        text-align: center;
+    }
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0 15px;
+        color: #0D2602;
+        text-decoration: none;
+    }
+    .here {
+    color: #D9D8D2; /* красный */
+    font-weight: bold;
+    }
+    main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+     }
+     footer {
+            background: #5A6B3D;
+            color: #D9D8D2;
+            text-align: center;
+            padding: 20px;
+        }
+</style>
+<body>
+     <header>
+        <h1>LanCha Tea Shop</h1>
+        <nav>
+            <a href="index.html#about" >О нас</a>
+            <a href="tea.html" >Чай</a>
+            <a href="accessories.html">Посуда</a>
+            <a href="order.html"class="here">Сделать заказ</a>
+            <a href="contacts.html">Лицензия</a>
+            <a href="https://en.chnmuseum.cn/" target="_blank">Партнёры</a>
+            <a href="index.html">На главную страницу</a>
+            
+        </nav>
+    </header>
+    <main>
+         <div style="text-align: center; margin: 20px 0;">
+            <a href="#order" >Форма заказа</a> |
+            <a href="#box">Алгоритмическая задача</a> 
+        </div>
+        <section id="order">
+    <h2>Форма заказа чая</h2>
+        <form action="https://google.com" target="_blank" method="get">
+        <fieldset style="border: 2px solid #788C4D; padding: 15px; margin: 20px 0;">
+            <legend>Ваши контактные данные</legend>
+            
+            <!-- text: Фамилия -->
+            <div style="margin: 10px 0;">
+                <label>Фамилия:</label><br>
+                <input type="text" name="last_name" value="Иванов" required style="width: 300px;">
+            </div>
+            
+            <!-- text: Имя -->
+            <div style="margin: 10px 0;">
+                <label>Имя:</label><br>
+                <input type="text" name="first_name" value="Иван" required style="width: 300px;">
+            </div>
+            
+            <!-- number: Группа -->
+            <div style="margin: 10px 0;">
+                <label>Группа (номер):</label><br>
+                <input type="number" name="group_number" value="1" style="width: 300px;">
+            </div>
+            
+            <!-- tel: Мобильный телефон -->
+            <div style="margin: 10px 0;">
+                <label>Мобильный телефон:</label><br>
+                <input type="tel" name="phone" value="87654323100" required style="width: 300px;">
+            </div>
+            
+            <!-- email: Электронная почта -->
+            <div style="margin: 10px 0;">
+                <label>Электронная почта:</label><br>
+                <input type="email" name="email" value="mail@cha" required style="width: 300px;">
+            </div>
+            
+            <!-- date: Дата отправки -->
+            <div style="margin: 10px 0;">
+                <label>Дата отправки:</label><br>
+                <input type="date" name="submission_date" style="width: 300px;">
+            </div>
+        </fieldset>
+
+        <!-- === ДАННЫЕ ЗАКАЗА (второе требование) === -->
+        <fieldset style="border: 2px solid #8FA65D; padding: 15px; margin: 20px 0;">
+            <legend>Данные заказа</legend>
+            
+            <!-- hidden: Скрытое поле -->
+            <input type="hidden" name="order_id" value="tea_order_001">
+            
+            <!-- text: Название чая -->
+            <div style="margin: 10px 0;">
+                <label>Название чая:</label><br>
+                <input type="text" name="tea_name" value="Лунцзин" style="width: 300px;">
+            </div>
+            
+            <!-- number: Количество -->
+            <div style="margin: 10px 0;">
+                <label>Количество (грамм):</label><br>
+                <input type="number" name="tea_quantity" value="100" min="50" max="1000" style="width: 300px;">
+            </div>
+            
+            <!-- radio: Способ доставки -->
+            <div style="margin: 10px 0;">
+                <label>Способ доставки:</label><br>
+                <input type="radio" name="delivery_method" value="courier" checked> Курьер<br>
+                <input type="radio" name="delivery_method" value="pickup"> Самовывоз
+            </div>
+            
+            <!-- checkbox: Дополнительные опции -->
+            <div style="margin: 10px 0;">
+                <label>Дополнительные опции:</label><br>
+                <input type="checkbox" name="gift_packaging" value="yes"> Подарочная упаковка<br>
+                <input type="checkbox" name="tea_sampler" value="yes"> Набор пробников
+            </div>
+            
+            <!-- date: Желаемая дата доставки -->
+            <div style="margin: 10px 0;">
+                <label>Желаемая дата доставки:</label><br>
+                <input type="date" name="delivery_date" style="width: 300px;">
+            </div>
+            
+            <!-- password: Пароль для отслеживания -->
+            <div style="margin: 10px 0;">
+                <label>Пароль для отслеживания заказа:</label><br>
+                <input type="password" name="tracking_password" style="width: 300px;">
+            </div>
+        </fieldset>
+        <!-- Добавь этот блок в форму заказа перед кнопкой отправки -->
+<section id="box">
+<div style="padding: 15px; margin: 20px 0; border-radius: 10px;">
+    <h3> Проверка доставки</h3>
+    <p>Проверим, пройдёт ли коробка с чаем в вашу дверь:</p>
+    
+    <div style="margin: 15px 0;">
+        <label><strong>Размеры вашей двери:</strong></label><br>
+        <input type="number" id="doorWidth" placeholder="Ширина" value="80" style="width: 100px;"> см × 
+        <input type="number" id="doorHeight" placeholder="Высота" value="200" style="width: 100px;"> см
+    </div>
+    
+   <div style="margin: 15px 0;">
+        <label><strong>Размеры коробки с чаем:</strong></label><br>
+        <input type="number" id="boxLength" placeholder="Длина" value="30" style="width: 80px;"> см × 
+        <input type="number" id="boxWidth" placeholder="Ширина" value="20" style="width: 80px;"> см × 
+        <input type="number" id="boxHeight" placeholder="Высота" value="10" style="width: 80px;"> см
+    </div>
+    
+    <div style="margin: 15px 0;">
+        <input type="button" value="Проверить доставку" onclick="checkDelivery()" 
+               style="background: #788C4D; color: white; padding: 8px 15px; border: none;">
+        <span id="deliveryResult" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+</div>
+
+<script>
+function checkDelivery() {
+    // Получаем размеры двери
+    const doorWidth = Number(document.getElementById('doorWidth').value);
+    const doorHeight = Number(document.getElementById('doorHeight').value);
+    
+    // Получаем размеры коробки
+    const boxLength = Number(document.getElementById('boxLength').value);
+    const boxWidth = Number(document.getElementById('boxWidth').value);
+    const boxHeight = Number(document.getElementById('boxHeight').value);
+    
+    // Все возможные грани коробки
+    const boxFaces = [
+        [boxLength, boxWidth],   // длина × ширина
+        [boxLength, boxHeight],  // длина × высота  
+        [boxWidth, boxHeight]    // ширина × высота
+    ];
+    
+    let canPass = false;
+    
+    // Проверяем все ориентации коробки
+    for (let face of boxFaces) {
+        if ((face[0] <= doorWidth && face[1] <= doorHeight) || 
+            (face[1] <= doorWidth && face[0] <= doorHeight)) {
+            canPass = true;
+            break;
+        }
+    }
+    
+    const resultElement = document.getElementById('deliveryResult');
+    if (canPass) {
+        resultElement.innerHTML = "✅ Доставка возможна! Курьер принесёт заказ.";
+        resultElement.style.color = "green";
+    } else {
+        resultElement.innerHTML = "❌ Рекомендуем самовывоз или заказ в подарочной упаковке";
+        resultElement.style.color = "red";
+    }
+}
+</script>
+</section>
+        
+        <!-- Кнопка отправки -->
+        <div style="margin: 20px 0;">
+            <input type="submit" value="Отправить заказ" style="padding: 10px 20px;">
+        </div>
+        </form>
+    </main>
+
+     <footer>
+        <p>&copy; 2025 LanCha. Все права защищены.</p>
+    </footer>   
+</body>
+</html>

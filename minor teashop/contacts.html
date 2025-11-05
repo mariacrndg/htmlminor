@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LanCha</title>
+    <style>
+        body {  
+            background-color: #D9D8D2; 
+            color: #0D2602; 
+            margin: 0;
+            font-family: Arial;
+        }
+        header {
+            background: linear-gradient(135deg, #788C4D, #8FA65D); 
+            color: #D9D8D2;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #0D2602;
+            text-decoration: none;
+        }
+        .here {
+            color: #D9D8D2;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        footer {
+            background: #5A6B3D;
+            color: #D9D8D2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Стили для паспорта */
+        .passport-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+        }
+        
+        .passport-bg {
+            width: 600px;
+            height: auto;
+            display: block;
+        }
+        
+        .passport-photo {
+            position: absolute;
+            width: 180px;
+            height: 216px;
+            top: 535px;
+            left: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .passport-text {
+            position: absolute;
+            font-size: 20px;
+            color: black;
+            text-align: left;
+        }
+        
+        .surname { top: 497px; left: 260px;  }
+        .name { top: 553px; left: 260px;}
+        .patronymic { top: 583px; left: 260px; }
+        .birth-year { top: 615px; left: 345px; }
+        .issue-date { top: 180px; left: 120px; }
+        .code { top:180px; left: 360px; }
+        .mvd { top:80px; left: 120px; }
+        .place { top: 645px; left: 280px; }
+        
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            background: #5A6B3D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dom-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LanCha Tea Shop</h1>
+        <nav>
+            <a href="index.html#about">О нас</a>
+            <a href="tea.html">Чай</a>
+            <a href="accessories.html">Посуда</a>
+            <a href="order.html">Сделать заказ</a>
+            <a href="contacts.html" class="here">Лицензия</a>
+            <a href="https://en.chnmuseum.cn/" target="_blank">Партнёры</a>
+            <a href="index.html">На главную страницу</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="passport">
+        <div style="text-align: center; margin: 20px 0;">
+            <a href="#passport" >Паспорт</a> |
+            <a href="#dom">Информация из DOM</a>
+            
+        </div>
+        <h1 style='color: #0D2602; text-align: center;''>Лицензия чайного эксперта</h1>
+        <button button onclick="changeToLatin()" id="translateButton">Перевести на латиницу</button>
+
+        <div class="passport-wrapper">
+            <!-- 1. Фон - пустой паспорт -->
+            <img src="pasport.png" class="passport-bg" alt="Бланк паспорта">
+            
+            <!-- 2. Фото поверх -->
+            <img src="5211088527980957497.jpg" class="passport-photo" alt="Мое фото">
+            
+            <!-- 3. Текст поверх -->
+            <div class="passport-text surname" id="surname">АКСЕНОВА</div>
+            <div class="passport-text name" id="name">МАРИЯ</div>
+            <div class="passport-text patronymic" id="patronymic">ЕВГЕНЬЕВНА</div>
+            <div class="passport-text birth-year" id="birthYear">21.06.2006</div>
+            <div class="passport-text issue-date">01.09.2020</div>
+            <div class="passport-text code">500-042</div>
+            <div class="passport-text mvd" id="mvd">ГУ МВД РОССИИ ПО ЧАЕПИТИЯМ</div>
+            <div class="passport-text place" id="place">Г. ПЕКИН</div>
+        </div>
+    </section>
+       <section id="dom">
+        <h2 style='color: #0D2602; text-align: center;'>DOM_JS. Считываем информацию из DOM</h2>
+        <img src="2025-11-05_11-38-11.png" style="width: 1000px;">
+        </section>
+        
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 LanCha. Все права защищены.</p>
+    </footer>
+
+   <script>
+        let isLatin = false;
+        
+        function changeToLatin() {
+            const surname = document.getElementById('surname');
+            const name = document.getElementById('name');
+            const patronymic = document.getElementById('patronymic');
+            const birthYear = document.getElementById('birthYear');
+            const mvd = document.getElementById('mvd');
+            const place = document.getElementById('place');
+            const button = document.getElementById('translateButton');
+            
+            if (!isLatin) {
+                // Переводим на латиницу
+                surname.innerText = 'AKSENOVA';
+                name.innerText = 'MARIIA';
+                patronymic.innerText = 'EVGENEVNA';
+                birthYear.innerText = '21.06.2006';
+                mvd.innerText = 'GU MVD OF RUSSIA FOR TEA PARTIES';
+                place.innerText = 'BEIJING CITY';
+                button.textContent = 'Перевести на кириллицу';
+                isLatin = true;
+            } else {
+                // Возвращаем кириллицу
+                surname.innerText = 'АКСЕНОВА';
+                name.innerText = 'МАРИЯ';
+                patronymic.innerText = 'ЕВГЕНЬЕВНА';
+                birthYear.innerText = '21.06.2006';
+                mvd.innerText = 'ГУ МВД РОССИИ ПО ЧАЕПИТИЯМ';
+                place.innerText = 'Г. ПЕКИН';
+                button.textContent = 'Перевести на латиницу';
+                isLatin = false;
+            }
+        }
+    </script>
+    
+</body>
+</html>
